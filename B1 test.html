@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B1 English Grammar Placement Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 1.8em;
+        }
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            font-size: 1.4em;
+        }
+        .question {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #fafafa;
+            border-radius: 8px;
+            border: 1px solid #eaeaea;
+            transition: all 0.3s ease;
+        }
+        .question p {
+            font-weight: bold;
+            margin-top: 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+        label:hover {
+            background: #eef2f5;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        #result-box {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .warning { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+        .danger { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            display: block;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            display: block;
+            border: 1px solid #f5c6cb;
+        }
+        .correct-input { border: 2px solid #28a745 !important; background-color: #f0fdf4; }
+        .incorrect-input { border: 2px solid #dc3545 !important; background-color: #fff5f5; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>B1 English Grammar Placement Test</h1>
+    <p style="text-align: center; color: #7f8c8d;">Complete the questions below to check your B1 intermediate grammar level.</p>
+
+    <div id="englishTest">
+        <h2>Part 1: Multiple Choice</h2>
+        
+        <div class="question" id="box-q1">
+            <p>1. I ___ dinner when the lights suddenly ___ out. (Past Continuous)</p>
+            <label><input type="radio" name="q1" value="a"> a) cooked / went</label>
+            <label><input type="radio" name="q1" value="b"> b) was cooking / went</label>
+            <label><input type="radio" name="q1" value="c"> c) was cooking / were going</label>
+            <div class="feedback" id="feedback-q1"></div>
+        </div>
+
+        <div class="question" id="box-q2">
+            <p>2. She ___ Paris three times in her life. (Present Perfect)</p>
+            <label><input type="radio" name="q2" value="a"> a) has been to</label>
+            <label><input type="radio" name="q2" value="b"> b) has gone to</label>
+            <label><input type="radio" name="q2" value="c"> c) has been in</label>
+            <div class="feedback" id="feedback-q2"></div>
+        </div>
+
+        <div class="question" id="box-q3">
+            <p>3. You look absolutely exhausted! ___ all day? (Present Perfect Continuous)</p>
+            <label><input type="radio" name="q3" value="a"> a) Have you worked</label>
+            <label><input type="radio" name="q3" value="b"> b) Did you work</label>
+            <label><input type="radio" name="q3" value="c"> c) Have you been working</label>
+            <div class="feedback" id="feedback-q3"></div>
+        </div>
+
+        <div class="question" id="box-q4">
+            <p>4. If I ___ the umbrella, I __ completely wet! (3rd Conditional)</p>
+            <label><input type="radio" name="q4" value="a"> a) had taken / wouldn't have got</label>
+            <label><input type="radio" name="q4" value="b"> b) took / wouldn’t got</label>
+            <label><input type="radio" name="q4" value="c"> c) would take / I hadn’t got</label>
+            <div class="feedback" id="feedback-q4"></div>
+        </div>
+
+        <div class="question" id="box-q5">
+            <p>5. They ___ the exam if they ___ harder. (3rd Conditional)</p>
+            <label><input type="radio" name="q5" value="a"> a) would pass / studied</label>
+            <label><input type="radio" name="q5" value="b"> b) would have passed / had studied</label>
+            <label><input type="radio" name="q5" value="c"> c) had passed / would have studied</label>
+            <div class="feedback" id="feedback-q5"></div>
+        </div>
+
+        <div class="question" id="box-q6">
+            <p>6. I strongly believe that ___ health is more important than ___ money. (Advanced Articles)</p>
+            <label><input type="radio" name="q6" value="a"> a) the / the</label>
+            <label><input type="radio" name="q6" value="b"> b) - / - (no article)</label>
+            <label><input type="radio" name="q6" value="c"> c) a / a</label>
+            <div class="feedback" id="feedback-q6"></div>
+        </div>
+
+        <div class="question" id="box-q7">
+            <p>7. I really can't stand ___ in long queues. (Gerund / Infinitive)</p>
+            <label><input type="radio" name="q7" value="a"> a) to wait</label>
+            <label><input type="radio" name="q7" value="b"> b) waiting</label>
+            <label><input type="radio" name="q7" value="c"> c) wait</label>
+            <div class="feedback" id="feedback-q7"></div>
+        </div>
+
+        <div class="question" id="box-q8">
+            <p>8. She promised ___ me with my difficult project. (Gerund / Infinitive)</p>
+            <label><input type="radio" name="q8" value="a"> a) to help</label>
+            <label><input type="radio" name="q8" value="b"> b) helping</label>
+            <label><input type="radio" name="q8" value="c"> c) help</label>
+            <div class="feedback" id="feedback-q8"></div>
+        </div>
+
+        <div class="question" id="box-q9">
+            <p>9. I ___ my keys yesterday, but I ___ them yet. (Present Perfect)</p>
+            <label><input type="radio" name="q9" value="a"> a) have lost / didn't find</label>
+            <label><input type="radio" name="q9" value="b"> b) lost / didn't find</label>
+            <label><input type="radio" name="q9" value="c"> c) lost / haven't found</label>
+            <div class="feedback" id="feedback-q9"></div>
+        </div>
+
+        <div class="question" id="box-q10">
+            <p>10. We decided to go to ___ Alps for our winter holiday. (Articles)</p>
+            <label><input type="radio" name="q10" value="a"> a) the</label>
+            <label><input type="radio" name="q10" value="b"> b) - (no article)</label>
+            <label><input type="radio" name="q10" value="c"> c) a</label>
+            <div class="feedback" id="feedback-q10"></div>
+        </div>
+
+        <h2>Part 2: Sentence Transformation & Fill in the blanks</h2>
+        
+        <div class="question" id="box-q11">
+            <p>11. Вставьте глагол в Present Perfect Continuous:<br> <i>I started reading this book two weeks ago and I haven't finished it. -> I ____________________ this book for two weeks.</i></p>
+            <input type="text" name="q11" id="input-q11" autocomplete="off" placeholder="Type your answer here...">
+            <div class="feedback" id="feedback-q11"></div>
+        </div>
+
+        <div class="question" id="box-q12">
+            <p>12. Закончите предложение (Conditional):<br> <i>She was late because she missed the bus. -> If she hadn't missed the bus, she ____________________ late.</i></p>
+            <input type="text" name="q12" id="input-q12" autocomplete="off" placeholder="Type your answer here...">
+            <div class="feedback" id="feedback-q12"></div>
+        </div>
+
+        <div class="question" id="box-q13">
+            <p>13. Раскройте скобки (Gerund / Infinitive). Напишите только одно слово:<br> <i>Do you mind (close) the door? It's freezing!</i></p>
+            <input type="text" name="q13" id="input-q13" autocomplete="off" placeholder="Type your answer here...">
+            <div class="feedback" id="feedback-q13"></div>
+        </div>
+
+        <div class="question" id="box-q14">
+            <p>14. Вставьте правильную форму:<br> <i>___ (you / finish) your homework yet?</i></p>
+            <input type="text" name="q14" id="input-q14" autocomplete="off" placeholder="Type your answer here...">
+            <div class="feedback" id="feedback-q14"></div>
+        </div>
+
+        <button type="button" onclick="checkTest()">Check Results</button>
+    </div>
+
+    <div id="result-box"></div>
+</div>
+
+<script>
+    function checkTest() {
+        try {
+            let score = 0;
+            const totalQuestions = 14;
+
+            const part1Data = {
+                q1: { ans: "b", text: "b) was cooking / went" },
+                q2: { ans: "a", text: "a) has been to" },
+                q3: { ans: "c", text: "c) Have you been working" },
+                q4: { ans: "a", text: "a) had taken / wouldn't have got" },
+                q5: { ans: "b", text: "b) would have passed / had studied" },
+                q6: { ans: "b", text: "b) - / - (no article)" },
+                q7: { ans: "b", text: "b) waiting" },
+                q8: { ans: "a", text: "a) to help" },
+                q9: { ans: "c", text: "c) lost / haven't found" },
+                q10: { ans: "a", text: "a) the" }
+            };
+
+            let feedbacks = document.querySelectorAll('.feedback');
+            for(let k = 0; k < feedbacks.length; k++) {
+                feedbacks[k].className = 'feedback';
+                feedbacks[k].innerHTML = '';
+            }
+            let inputs = document.querySelectorAll('input[type="text"]');
+            for(let j = 0; j < inputs.length; j++) {
+                inputs[j].classList.remove('correct-input', 'incorrect-input');
+            }
+
+            for (let key in part1Data) {
+                const selected = document.querySelector('input[name="' + key + '"]:checked');
+                const feedbackEl = document.getElementById('feedback-' + key);
+                
+                if (selected) {
+                    if (selected.value === part1Data[key].ans) {
+                        score++;
+                        feedbackEl.innerHTML = "✔ Correct";
+                        feedbackEl.classList.add('correct');
+                    } else {
+                        feedbackEl.innerHTML = "✘ Incorrect. Правильный ответ: <b>" + part1Data[key].text + "</b>";
+                        feedbackEl.classList.add('incorrect');
+                    }
+                } else {
+                    feedbackEl.innerHTML = "✘ Вы не ответили. Правильный ответ: <b>" + part1Data[key].text + "</b>";
+                    feedbackEl.classList.add('incorrect');
+                }
+            }
+
+            const cleanText = function(text) {
+                return text.toLowerCase()
+                           .replace(/[.,?!'’`]/g, '') 
+                           .replace(/\s+/g, ' ')
+                           .trim();
+            };
+
+            const part2Data = {
+                q11: {
+                    variants: ["have been reading", "ve been reading"],
+                    display: "have been reading / 've been reading"
+                },
+                q12: {
+                    variants: ["would not have been", "wouldnt have been"],
+                    display: "would not have been / wouldn't have been"
+                },
+                q13: {
+                    variants: ["closing"],
+                    display: "closing"
+                },
+                q14: {
+                    variants: ["have you finished"],
+                    display: "Have you finished"
+                }
+            };
+
+            for (let i = 11; i <= 14; i++) {
+                const inputEl = document.getElementById('input-q' + i);
+                const feedbackEl = document.getElementById('feedback-q' + i);
+                
+                const rawInput = inputEl.value;
+                const cleanedInput = cleanText(rawInput);
+                
+                if (rawInput.trim() === '') {
+                    inputEl.classList.add('incorrect-input');
+                    feedbackEl.innerHTML = "✘ Поле пустое. Правильный ответ: <b>" + part2Data['q'+i].display + "</b>";
+                    feedbackEl.classList.add('incorrect');
+                } else if (part2Data['q'+i].variants.indexOf(cleanedInput) !== -1) {
+                    score++;
+                    inputEl.classList.add('correct-input');
+                    feedbackEl.innerHTML = "✔ Correct";
+                    feedbackEl.classList.add('correct');
+                } else {
+                    inputEl.classList.add('incorrect-input');
+                    feedbackEl.innerHTML = "✘ Ошибка. Правильный ответ: <b>" + part2Data['q'+i].display + "</b>";
+                    feedbackEl.classList.add('incorrect');
+                }
+            }
+
+            const resultBox = document.getElementById('result-box');
+            resultBox.style.display = 'block';
+            
+            let percentage = Math.round((score / totalQuestions) * 100);
+            let message = "<strong>Your Score: " + score + " / " + totalQuestions + " (" + percentage + "%)</strong><br>";
+
+            if (percentage >= 80) {
+                resultBox.className = 'success';
+                message += "Excellent! Уверенный уровень B1.";
+            } else if (percentage >= 50) {
+                resultBox.className = 'warning';
+                message += "Not bad, но сложные темы (Conditionals, Perfect Tenses) нужно подтянуть.";
+            } else {
+                resultBox.className = 'danger';
+                message += "Keep practicing! До B1 пока рановато, есть пробелы в базе.";
+            }
+
+            resultBox.innerHTML = message;
+            
+            setTimeout(function() {
+                window.scrollTo(0, document.body.scrollHeight);
+            }, 100);
+
+        } catch (e) {
+            alert("Произошла ошибка при проверке: " + e.message);
+        }
+    }
+</script>
+
+</body>
+</html>
